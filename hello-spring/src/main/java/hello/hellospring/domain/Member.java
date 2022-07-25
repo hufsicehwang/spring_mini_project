@@ -1,7 +1,5 @@
 package hello.hellospring.domain;
 
-import org.springframework.data.annotation.CreatedDate;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +25,6 @@ public class Member {
     public void setRegisterTime(LocalDateTime registerTime) {
         this.registerTime = registerTime;
     }
-
     public Long getId() {
         return id;
     }
@@ -62,5 +59,4 @@ public class Member {
     public void setText(String text) {
         this.text = text;
     }
-
 }
