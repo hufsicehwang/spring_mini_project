@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,7 @@ public class MemberController {
         Member member = new Member();
         member.setName(form.getName());
         member.setText(form.getMessage());
+        member.setRegisterTime(LocalDateTime.now());
 
         memberService.join(member);
 
@@ -45,11 +47,11 @@ public class MemberController {
         return "members/memberList";
     }
 
-    @RequestMapping(value = "/members", method = RequestMethod.GET)
+    /* @RequestMapping(value = "/members", method = RequestMethod.GET)
     public String read(@RequestParam("id") Long id) {
 
         Optional<Member> member = memberService.findOne(id);
 
         return "members/readDetail";
-    }
+    } */
 }
