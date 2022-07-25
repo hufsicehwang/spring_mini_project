@@ -1,6 +1,8 @@
 html, body{
   overflow-x: hidden;
   margin : 0;
+  width:100%;
+  height:100%;
 }
 .searchBox {
   display:flex; 
@@ -16,11 +18,9 @@ html, body{
 }
 
 .form__group {
-    display:inline-grid;
     padding: 15px 0 0;
     width: 50%;
     margin: 0 auto;
-    margin-left:200px;
 }
 
 
@@ -50,19 +50,20 @@ html, body{
   background: transparent;
   transition: border-color 0.2s;
 }
-
+/*
 .form__field:placeholder-shown ~ .form__label {
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
 }
-
+*/
 .form__label {
   top: 0;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #9b9b9b;
+  color: #000000;
+  font-weight: 900;
 }
 
 .form__field:focus {
@@ -72,6 +73,14 @@ html, body{
   border-image: linear-gradient(to right, #11998e, #38ef7d);
   border-image-slice: 1;
 }
+.form__field3:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+/*
 .form__field:focus ~ .form__label {
   position: absolute;
   top: 0;
@@ -81,11 +90,8 @@ html, body{
   color: #11998e;
   font-weight: 700;
 }
-
+*/
 /* reset input */
-.form__field:required, .form__field:invalid {
-  box-shadow: none;
-}
 
 #message {
     resize:vertical
@@ -169,7 +175,6 @@ html, body{
 .review_send_btn{
     display: inline-block;
     width : 100px;
-    position:absolute;
     font-weight: 400;
     margin-top: 30px;
     margin-left:42rem;
@@ -445,5 +450,5 @@ details summary::-webkit-details-marker {
 .wapper-text2 img{
     width: 80px;
     height: 80px;
-    margin: 30px 0 0 55px;
+    margin: 30px 0 0 10px;
 }

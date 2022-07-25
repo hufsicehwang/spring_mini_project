@@ -23,22 +23,22 @@
     </div>
 </header>
 <div class="wapper">
-<div class="wapper-text2"><img src="/assets/image/guests-book.png" alt="">Guest Book</div>
+<div class="wapper-text2"><img src="/assets/image/guests-book.png" alt="">Write</div>
 <div class="form__group">
     <form action="/members/new" method="post">
         <div class="nameAndGroup">
             <div>
             <label for="name" class="form__label">이름</label>
-            <input type="text" class="form__field" name="name" id='name'/>
+            <input type="text" class="form__field" name="name" id='name' autocomplete="off"/>
             </div>
             <div class="group">
             <label for="group" class="form__label">소속</label>
-            <input type="text" class="form__field" name="name" id='group' required/>
+            <input type="text" class="form__field" name="name" id='group' autocomplete="off"/>
             </div>
         </div>
         <div class="title">
             <label for="title" class="form__label">제목</label>
-            <input type="text" class="form__field3"  name="title" id='title' required/>
+            <input type="text" class="form__field3"  name="title" id='title' autocomplete="off"/>
         </div>
         <div class="message">
             <label for="message" class="form__label">내용</label>
