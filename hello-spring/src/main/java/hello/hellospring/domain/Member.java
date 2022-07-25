@@ -13,7 +13,7 @@ public class Member {
     private Long id;
     private String name;
     private String text;
-    private Date currentDate;
+//    private Date currentDate;
 
     public Long getId() {
         return id;
@@ -36,10 +36,10 @@ public class Member {
         this.text = content;
     }
 
-    public Date getCurrentDate() {
-        return currentDate;
-    }
-    public void setCurrentDate(Date currentDate) {
-        this.currentDate = currentDate;
-    }
+//    public Date getCurrentDate() {
+//        return currentDate;
+//    }
+//    public void setCurrentDate(Date currentDate) {
+//        this.currentDate = currentDate;
+//    }
 }
