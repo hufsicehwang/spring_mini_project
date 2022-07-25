@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Member {
@@ -12,6 +13,7 @@ public class Member {
     private Long id;
     private String name;
     private String text;
+//    private Date currentDate;
 
     public Long getId() {
         return id;
@@ -33,4 +35,11 @@ public class Member {
     public void setText(String content) {
         this.text = content;
     }
+
+//    public Date getCurrentDate() {
+//        return currentDate;
+//    }
+//    public void setCurrentDate(Date currentDate) {
+//        this.currentDate = currentDate;
+//    }
 }

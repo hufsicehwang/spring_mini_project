@@ -1,23 +1,46 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member list</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/list.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
+</head>
 <body>
-<div class="container">
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>이름</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.id}"></td>
-                <td th:text="${member.name}"></td>
-            </tr>
-            </tbody>
-        </table>
+<header>
+    <div class="navi-section">
+        <nav>
+            <ul class="navi">
+                <li class="nav-item nav-1" onclick="location.href='/members'"><img src="/assets/image/daou_logo.png" alt=""></li>
+                <div class="right">
+                    <li class="nav-item nav-7"><a href="/members" >Guest Book</a></li>
+                    <!--                        <li class="nav-item nav-2"><a href="/home/list">둘러보기</a></li>-->
+                    <li class="nav-item"><a href="/members/new">Write</a></li>
+                    <!--                        <li class="nav-item"><a href="/main/logout">로그아웃</a></li>-->
+                </div>
+            </ul>
+        </nav>
     </div>
-</div> <!-- /container -->
+</header>
+
+<div class="wapper">
+    <div class="wapper-text2"><img src="/assets/image/corkboard.png" alt="">Guest Book</div>
+    <div class="content">
+        <div class="list" th:each="member : ${members}" th:if="${member.id % 2!=0}">
+            <div class="top"><span class="title" th:text = "${member.id}"></span></div>
+            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" ></span></div>
+        </div>
+        <div th:each="member : ${members}" th:if="${member.id % 2==0}" class="list2th">
+            <div class="top"><span class="title" th:text = "${member.id}"></span></div>
+            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" ></span></div>
+        </div>
+    </div>
+</div>
+
+<!--    <div  th:each="member : ${members}">-->
+<!--        <div th:text = "${member.id}"> </div>-->
+<!--        <div th:text = "${member.name}"> </div>-->
+<!--    </div>-->
+
 </body>
 </html>
