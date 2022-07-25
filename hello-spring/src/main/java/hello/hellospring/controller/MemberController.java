@@ -32,12 +32,14 @@ public class MemberController {
         System.out.println(form.getMessage());
         Member member = new Member();
         member.setName(form.getName());
+        member.setTeam(form.getTeam());
+        member.setTitle(form.getTitle());
         member.setText(form.getMessage());
         member.setRegisterTime(LocalDateTime.now());
 
         memberService.join(member);
 
-        return "redirect:/";
+        return "redirect:/members";
     }
 
     @GetMapping("/members")
