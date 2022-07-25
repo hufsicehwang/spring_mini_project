@@ -35,12 +35,12 @@ html, body{
     font-family: 'Courier New', Courier, monospace;
     display: inline-grid;
     position: relative;
-    left:90%;
+    left:85%;
 }
 .wapper-text2 img{
     width: 80px;
     height: 80px;
-    margin: 30px 0 0 20px;
+    margin: 30px 0 0 55px;
 }
 
 .list{
@@ -61,6 +61,7 @@ html, body{
     box-shadow: 0 0  20px gray;
     transition: 0.5s;
     margin-bottom: 50px;
+    border: 1px solid gray;
 }
 .list:hover{
     position: relative;
