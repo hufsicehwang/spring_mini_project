@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>작성하기</title>
-    <link rel="stylesheet" th:href="@{/assets/css/header.css}">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
     <link rel="stylesheet" th:href="@{/assets/css/review.css}">
-    <!-- <script src="@{/js/includeHTML.js}"></script> -->
+
     <style>
             html,body{
                 margin: 0;
@@ -13,8 +13,22 @@
     </style>
 </head>
 <body>
-<header th:replace="header.html :: header"></header>
-<!-- <h3 class="review_h3">공개 설정</h3> -->
+<header>
+    <div class="navi-section">
+        <nav>
+            <ul class="navi">
+                <li class="nav-item nav-1" onclick="location.href='/members'"><img src="/assets/image/daou_logo.png" alt=""></li>
+                <div class="right">
+                    <li class="nav-item nav-7"><a href="/members" >Guest Book</a></li>
+                    <!--                        <li class="nav-item nav-2"><a href="/home/list">둘러보기</a></li>-->
+                    <li class="nav-item"><a href="/members/new">Write</a></li>
+                    <!--                        <li class="nav-item"><a href="/main/logout">로그아웃</a></li>-->
+                </div>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <div class="form__group">
     <form action="/members/new" method="post">
         <div style="display:flex;">

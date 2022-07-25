@@ -45,11 +45,11 @@ public class MemberController {
         return "members/memberList";
     }
 
-    @RequestMapping(value = "/members", method = RequestMethod.GET)
-    public String read(@RequestParam("id") Long id) {
-
-        Optional<Member> member = memberService.findOne(id);
-
-        return "members/readDetail";
-    }
+//    @RequestMapping(value = "/members", method = RequestMethod.GET)
+//    public String read(@RequestParam("id") Long id) {
+//
+//        Optional<Member> member = memberService.findOne(id);
+//
+//        return "members/readDetail";
+//    }
 }
