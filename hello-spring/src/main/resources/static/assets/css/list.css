@@ -7,13 +7,13 @@ html, body{
 .wapper{
     width: 100%;
     height: 100%;
-    background-color: #fbceb1;
+    background-image:url(/assets/image/wallpaper2.jpg);
+    background-size:cover;
 }
 .content{
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: #fbceb1;
 }
 
 .wapper-text img{

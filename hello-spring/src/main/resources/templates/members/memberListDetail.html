@@ -28,42 +28,16 @@
   <div class="detail" th:each="member : ${members}">
     <div class="title" th:text = "${member.get().getTitle()}"></div>
     <div class="data1">
-      <div class="star"><span class="t1">평점:</span> <span id="star"></span></div>
-      <div class="review"><span class="t1">감상평:</span> <span class="t2">{{review}}</span></div>
-      <div class="writer"><span class="t1">작성자:</span> <span class="t2">{{writer}}</span></div>
-      <div class="date"><span class="t1">작성 날짜:</span> <span class="t2">{{writed_date|date:'Y.n.j A g:i'}}</span></div>
+      <div class="content"><span class="contentText" th:text = "${member.get().getText()}">내용:</span></div>
     </div>
     <div class="data2">
-      <div class="genre"><span class="t1">장르:</span> <span class="t2">{{genre}}</span></div>
-      <div class="time"><span class="t1">런타임:</span><span class="t2">{{time}}분</span></div>
-      <div class="age"><span class="t1">관람등급: </span><span class="t2">{{age}}</span></div>
-      <div class="syear"><span class="t1">제작국가:</span> <span class="t2">{{nation}}</span></div>
-      <div class="oyear"><span class="t1">개봉년도:</span> <span class="t2">{{Oyear}}</span></div>
+      <div class="writer"><span class="t1">작성자 : </span> <span class="t2" th:text = "${member.get().getName()}"></span></div>
+      <div class="team"><span class="t1">소속 : </span><span class="t2" th:text = "${member.get().getTeam()}"></span></div>
+      <div class="date"><span class="t1">등록일자 : </span><span class="t2" th:text = "${#temporals.format(member.get().getRegisterTime(),'yyyy년 MM월 dd일 HH:mm')}"></span></div>
     </div>
   </div>
   <!-- </div> -->
+
 </div>
-<script>
-        includeHTML();
-    </script>
-<script>
-        var star = "{{star}}";
-        var s = document.getElementById('star')
-        if (star == 4){
-            s.innerText = "★★★★☆"
-        }
-        else if (star == 1){
-            s.innerText = "★☆☆☆☆"
-        }
-        else if (star == 2){
-            s.innerText = "★★☆☆☆"
-        }
-        else if (star == 3){
-            s.innerText = "★★★☆☆"
-        }
-        else if (star == 5){
-            s.innerText = "★★★★★"
-        }
-    </script>
 </body>
 </html>
