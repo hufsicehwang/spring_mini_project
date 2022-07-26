@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private String team;
     private String title;
@@ -25,10 +25,10 @@ public class Member {
     public void setRegisterTime(LocalDateTime registerTime) {
         this.registerTime = registerTime;
     }
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

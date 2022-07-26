@@ -17,7 +17,7 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public Long join(Member member) {
+    public int join(Member member) {
 
         validateDuplicateMember(member);    //  중복 회원 검증******
         memberRepository.save(member);
@@ -37,7 +37,7 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberId) {
+    public Optional<Member> findOne(int memberId) {
         return memberRepository.findById(memberId);
     }
 }
