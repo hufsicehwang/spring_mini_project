@@ -25,14 +25,14 @@
 
 <div class="wapper">
     <div class="wapper-text2"><img src="/assets/image/corkboard.png" alt="">Guest Book</div>
-    <div class="content" th:each="member : ${members}" th:onclick=" 'location.href=\'' + @{members/detail(id=${member.id})} +'\''" >
-        <div th:if="${member.id % 2!=0}" class="list"  >
+    <div class="content" th:each="member : ${members}">
+        <div th:if="${member.id % 2!=0}" class="list" th:onclick=" 'location.href=\'' + @{members/detail(id=${member.id})} +'\''">
             <div class="top"><span class="title" th:text = "${member.title}"></span></div>
-            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" th:text = "${#temporals.format(member.registerTime,'yyyy년 MM월 HH일 mm:ss')}" ></span></div>
+            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" th:text = "${#temporals.format(member.registerTime,'yyyy년 MM월 dd일 HH:mm')}" ></span></div>
         </div>
-        <div th:unless="${member.id % 2!=0}" class="list2th">
+        <div th:unless="${member.id % 2!=0}" class="list2th" th:onclick=" 'location.href=\'' + @{members/detail(id=${member.id})} +'\''">
             <div class="top"><span class="title" th:text = "${member.title}"></span></div>
-            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" th:text = "${#temporals.format(member.registerTime,'yyyy년 MM월 HH일 mm:ss')}"></span></div>
+            <div class="buttom"><span class="w1">작성자: <span class="w2" th:text = "${member.name}"></span></span><span class="date" th:text = "${#temporals.format(member.registerTime,'yyyy년 MM월 dd일 HH:mm')}"></span></div>
         </div>
     </div>
 </div>
