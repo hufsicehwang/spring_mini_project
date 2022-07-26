@@ -17,7 +17,7 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public Long join(Member member) {
+    public int join(Member member) {
 
         memberRepository.save(member);
         return member.getId();
@@ -27,7 +27,7 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberId) {
+    public Optional<Member> findOne(int memberId) {
         return memberRepository.findById(memberId);
     }
 }
