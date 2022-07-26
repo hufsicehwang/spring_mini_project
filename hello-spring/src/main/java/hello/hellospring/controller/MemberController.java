@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -44,16 +45,20 @@ public class MemberController {
 
     @GetMapping("/members")
     public String list(Model model) {
+        System.out.println("GET!!!!!!!!!!!!!");
         List<Member> members = memberService.findMembers();
+        System.out.println("GET!!!!!!!!!!!!!, ,members : "+members.toString());
         model.addAttribute("members", members);
         return "members/memberList";
     }
 
-    /* @RequestMapping(value = "/members", method = RequestMethod.GET)
-    public String read(@RequestParam("id") Long id) {
+    @GetMapping("/members/detail")
+    public String listDetail(@RequestParam int id, Model model) throws Exception {
+        System.out.println("detail, id : "+id+"!!!!!!!!!!!");
+        Optional<Member> members = memberService.findOne(id);
+        System.out.println("detail!!!!!!!!!!!!!, ,members : "+members.toString());
+        model.addAttribute("members", members);
+        return "members/memberListDetail";
+    }
 
-        Optional<Member> member = memberService.findOne(id);
-
-        return "members/readDetail";
-    } */
 }
