@@ -25,12 +25,12 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String createForm() {
+
         return "members/createMemberForm";
     }
 
     @PostMapping("/members/new")
     public String create(MemberForm form) {
-        System.out.println(form.getMessage());
         Member member = new Member();
         member.setName(form.getName());
         member.setTeam(form.getTeam());
@@ -45,18 +45,14 @@ public class MemberController {
 
     @GetMapping("/members")
     public String list(Model model) {
-        System.out.println("GET!!!!!!!!!!!!!");
         List<Member> members = memberService.findMembers();
-        System.out.println("GET!!!!!!!!!!!!!, ,members : "+members.toString());
         model.addAttribute("members", members);
         return "members/memberList";
     }
 
     @GetMapping("/members/detail")
     public String listDetail(@RequestParam int id, Model model) throws Exception {
-        System.out.println("detail, id : "+id+"!!!!!!!!!!!");
         Optional<Member> members = memberService.findOne(id);
-        System.out.println("detail!!!!!!!!!!!!!, ,members : "+members.toString());
         model.addAttribute("members", members);
         return "members/memberListDetail";
     }
