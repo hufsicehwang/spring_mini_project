@@ -7,27 +7,27 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional
 // @Service
 public class MemberService {
     private final MemberRepository memberRepository;
-
-    // @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
+    @Transactional
     public int join(Member member) {
 
         memberRepository.save(member);
         return member.getId();
     }
-
+    @Transactional
     public List<Member> findMembers() {
+
         return memberRepository.findAll();
     }
-
+    @Transactional
     public Optional<Member> findOne(int memberId) {
+
         return memberRepository.findById(memberId);
     }
 }

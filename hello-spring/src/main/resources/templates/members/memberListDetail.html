@@ -15,28 +15,24 @@
         <li class="nav-item nav-1" onclick="location.href='/members'"><img src="/assets/image/daou_logo.png" alt=""></li>
         <div class="right">
           <li class="nav-item nav-7"><a href="/members" >Guest Book</a></li>
-          <!--                        <li class="nav-item nav-2"><a href="/home/list">둘러보기</a></li>-->
           <li class="nav-item"><a href="/members/new">Write</a></li>
-          <!--                        <li class="nav-item"><a href="/main/logout">로그아웃</a></li>-->
         </div>
       </ul>
     </nav>
   </div>
 </header>
 <div class="outer">
-  <!-- <div class="detail-wapper"> -->
   <div class="detail" th:each="member : ${members}">
     <div class="title" th:text = "${member.get().getTitle()}"></div>
-    <div class="data1">
-      <div class="content"><span class="contentText" th:text = "${member.get().getText()}">내용:</span></div>
-    </div>
+      <div class="data1">
+        <div class="content"><span class="contentText" th:text = "${member.get().getText()}">내용:</span></div>
+      </div>
     <div class="data2">
       <div class="writer"><span class="t1">작성자 : </span> <span class="t2" th:text = "${member.get().getName()}"></span></div>
       <div class="team"><span class="t1">소속 : </span><span class="t2" th:text = "${member.get().getTeam()}"></span></div>
       <div class="date"><span class="t1">등록일자 : </span><span class="t2" th:text = "${#temporals.format(member.get().getRegisterTime(),'yyyy년 MM월 dd일 HH:mm')}"></span></div>
     </div>
   </div>
-  <!-- </div> -->
 
 </div>
 </body>
